@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Questao4 {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        String texto = lerTexto();
+        int numVogais = contadorVogais(texto);
+        System.out.println("Número de vogais: " + numVogais);
+
+        entrada.close();
+    }
+
+    public static String lerTexto() {
+        try (Scanner entrada = new Scanner(System.in)) {
+			System.out.println("Digite uma frase: ");
+			String texto = entrada.nextLine();
+			
+			return texto;
+		}
+    }
+
+    public static int contadorVogais(String texto) {
+        int contador = 0;
+        for (int i = 0; i < texto.length(); i++) {
+            char c = texto.charAt(i);
+            if (vogal(c)) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public static boolean vogal(char c) {
+        c = Character.toLowerCase(c);
+        return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+    }
+    
+}
