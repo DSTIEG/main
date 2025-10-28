@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Questao7 {
+    
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.print("Digite seu nome completo: ");
+        String nomeCompleto = entrada.nextLine();
+        String primeiro = primeiroNome(nomeCompleto);
+        String sobrenome = sobreNome(nomeCompleto);
+        String sobrenome2 = sobreNome2(nomeCompleto);
+        System.out.println("Seu primeiro nome é: " + primeiro);
+        System.out.println("Seu segundo nome é: " + sobrenome2);      
+        System.out.println("Seu terceiro nome é: " + sobrenome);
+        System.out.println("Que nome lindo, " + nomeCompleto);
+        entrada.close();
+    }
+       
+        
+    
+    public static String primeiroNome(String nomeCompleto) {
+    
+        nomeCompleto = nomeCompleto.trim();
+        
+
+        String[] partes = nomeCompleto.split(" ");
+        
+   
+        return partes[0];
+    }
+
+    public static String sobreNome(String nomeCompleto) {
+        
+        nomeCompleto = nomeCompleto.trim();
+        
+
+        String[] partes = nomeCompleto.split(" ");
+        
+   
+        return partes[2];
+
+
+    }
+    
+    public static String sobreNome2(String nomeCompleto) {
+        
+        nomeCompleto = nomeCompleto.trim();
+        
+
+        String[] partes = nomeCompleto.split(" ");
+        
+   
+        return partes[1];
+
+
+    }
+
+}
+
+
+
+
